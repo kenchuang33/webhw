@@ -1,0 +1,47 @@
+/* 容器样式 */
+.main-content {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    
+}
+
+/* 按钮样式 */
+#subscribe-btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    /* 可以选择性地添加一些内边距或者外边距来调整位置 */
+}
+
+
+/* 可以根据需要添加其他样式 */
+nav {
+    background-color: #333;
+    color: white;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}

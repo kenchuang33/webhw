@@ -1,0 +1,87 @@
+package com.example.socket_to_theater_ex;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.HashMap;
+
+public class MainActivity extends AppCompatActivity {
+    Socket socket;
+    PrintWriter out;
+    String background="playground.jpg";
+    String foreground;
+    String prop;
+    String clothes;
+    String mask;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        SocketThread socketThread = new SocketThread();
+        socketThread.start();
+
+    }
+
+    class SendThread extends Thread{
+        String msg;
+        public SendThread(final String msg){
+            this.msg = msg;
+        }
+        @Override
+        public void run() {
+            try{
+                out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
+                out.println(this.msg);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+    class SocketThread extends Thread{
+        @Override
+        public void run() {
+            try{
+                socket = new Socket("10.0.2.2", 8002);
+                SendThread sendThread = new SendThread(setMaterialMsg());
+                sendThread.start();
+            } catch (UnknownHostException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    private String setMaterialMsg(){
+        HashMap<String, Object> attribute = new HashMap<>();
+        attribute.put("instruction", "Scene");
+        HashMap<String, Object> materials = new HashMap<>();
+        materials.put("background" , background == null ? null:background);
+        materials.put("foreground" , foreground == null ? null:foreground);
+        materials.put("prop" , prop == null ? null:prop);
+        materials.put("clothes" , clothes== null ? null:clothes);
+        materials.put("mask" , mask == null ? null:mask);
+        materials.put("shift_x", 80.0);
+        materials.put("shift_y", 80.0);
+        materials.put("scale", 1.0);
+        materials.put("puppet", null);
+        attribute.put("material", materials);
+        Log.e("material", new GsonBuilder().create().toJson(attribute));
+        return new GsonBuilder().create().toJson(attribute);
+
+
+
+    }
+}

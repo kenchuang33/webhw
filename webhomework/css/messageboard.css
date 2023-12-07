@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.navbarss {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+.navbarss a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.navbarss a.logout {
+    float: right;
+}
+/* .navbarss li {
+    color: transparent;
+} */
+.main-content {
+    margin: 20px;
+}
+.post-message {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.post-message input, .post-message textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.post-message button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.post-message button:hover {
+    background-color: #4cae4c;
+}
+.message-board {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    min-height: 200px;
+    border-radius: 5px;
+}
+.message {
+    border-bottom: 1px solid #e2e2e2; /* 浅灰色的底部边界线 */
+    padding: 15px; /* 留言内部的空间 */
+    margin-bottom: 10px; /* 留言之间的空间 */
+}
+
+.message:last-child {
+    border-bottom: none; /* 最后一条留言不需要底部边界线 */
+}
+
+/* 以下是留言标题、内容及用户信息的样式，根据需要调整 */
+.message h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.message p {
+    color: #666;
+    margin-bottom: 5px; /* 留言内容与用户名之间的空间 */
+}
+
+.message span {
+    color: #999;
+    font-size: 0.9em;
+}

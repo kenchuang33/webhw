@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件上傳頁面</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/upload.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="member.html">首頁</a></li>
+            <li><a href="update.html">修改資料</a></li>
+            <li id="logout" style="float: right;"><a>登出</a></li>
+            <li id="username-display" style="float: right;"></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h1>上傳檔案</h1>
+            <form id="file-upload-form" method="post" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02" name="file">
+                    <input type="submit" value="上傳檔案" class="btn btn-primary">
+                </div>
+            </form>
+            
+        </section>
+        <section>
+            <!-- ... 其他內容 ... -->
+            <table id="file-table" class="table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Filename</th>
+                        <th>Filesize</th>
+                        <th>Time</th>
+                        <th>檔案功能</th>
+                    </tr>
+                </thead>
+                <tbody id="message_table">
+                    <!-- 檔案列表將在這裡插入 -->
+                </tbody>
+            </table>
+        </section>
+        <div class="modal fade" id="renameModal" tabindex="-1" aria-labelledby="renameModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="renameModalLabel">更改檔名</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <input type="text" id="new-filename" class="form-control" placeholder="輸入新檔名">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary" onclick="updateFileName()">更新檔名</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="/js/upload.js"></script>
+</body>
+</html>

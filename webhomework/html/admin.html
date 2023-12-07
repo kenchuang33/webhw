@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <!-- 添加CSS链接 -->
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            
+            <li><a href="update.html" id="mem_update">修改資料</a></li>
+            <li><a href="upload.html" id="mem_upload">上傳資料</a></li>
+            <li><a href="messageboard.html" id="mem_messageboard">留言板</a></li>
+            <li><a href="sub.html" id="mem_sub">訂閱頁面</a></li>
+            <li id="logout" style="float: right;"><a>登出</a></li>
+            <li id="username-display" style="float: right;"></li>
+        </ul>
+    </nav>
+    <div class="admin-panel">
+        <input type="text" id="search-input" placeholder="搜尋日誌記錄" />
+        <button id="search-btn">搜尋</button>
+        <table id="logs-table">
+            <thead>
+                <tr>
+                    <th>用戶名</th>
+                    <th>時間</th>
+                    <th>行為</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 日志数据将通过JS动态填充 -->
+            </tbody>
+        </table>
+    </div>
+    
+
+    <!-- 引入jQuery和自定义JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .register-container {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 5px;
+    width: 1000px; /* Adjust width as necessary */
+  }
+  
+  .register-container h1 {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .register-container label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .input-group input[type="color"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .register-container input,
+  .register-container button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .gender-selection {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .gender-label {
+    margin-right: 15px; /* Adjust spacing between gender label and options */
+  }
+  
+  .gender-options {
+    display: flex;
+    align-items: center;
+  }
+  
+  .gender-options label {
+    margin-right: 10px; /* Adjust spacing between radio buttons and labels */
+  }
+  
+  .register-container button {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .register-container button:hover {
+    background-color: #666;
+  }
+  a{
+    color: rgb(0, 13, 255);
+  }
